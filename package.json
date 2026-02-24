@@ -1,0 +1,27 @@
+{
+  "name": "tutorial_playwright_batch022026",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "playwright": "^1.58.2",
+    "playwright-core": "^1.58.2"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.58.2",
+    "@types/node": "^25.3.0"
+  },
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/huongttd-2893/Tutorial_Playwright_Batch022026.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/huongttd-2893/Tutorial_Playwright_Batch022026/issues"
+  },
+  "homepage": "https://github.com/huongttd-2893/Tutorial_Playwright_Batch022026#readme"
+}
