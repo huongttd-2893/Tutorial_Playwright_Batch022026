@@ -26,10 +26,11 @@ export default defineConfig({
   reporter: 'html',
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
-    baseURL: 'https://www.saucedemo.com',
+    // baseURL: 'https://www.saucedemo.com',
     screenshot: 'only-on-failure',
     video: 'retain-on-failure',
     trace: 'on-first-retry',
+    headless: false,
     /* Base URL to use in actions like `await page.goto('')`. */
     // baseURL: 'http://localhost:3000',
 
@@ -39,9 +40,21 @@ export default defineConfig({
 
   /* Configure projects for major browsers */
   projects: [
+   // Setup project để chạy .setup.ts files
+    {
+      name: 'setup',
+      testMatch: /.*\.setup\.ts$/,  // ✅ Nhận diện .setup.ts files
+      use: { ...devices['Desktop Chrome'] }
+    },
+
+    // Main test projects
     {
       name: 'chromium',
-      use: { ...devices['Desktop Chrome'] },
+      use: {
+        ...devices['Desktop Chrome'],
+        storageState: 'playwright/.auth/user.json'  // Sử dụng auth state
+      },
+      dependencies: ['setup'],  // Chạy setup trước
     },
 
     // {
